@@ -1,5 +1,5 @@
-FROM golang:1.16.3-stretch AS builder
-LABEL AUTHOR Seungkyu Ahn (seungkyua@gmail.com)
+FROM golang:1.20.6-bullseye AS builder
+LABEL AUTHOR="Seungkyu Ahn" EMAIL="seungkyua@gmail.com"
 
 RUN mkdir -p /build
 WORKDIR /build
@@ -14,7 +14,7 @@ RUN cp /build/bin/helloworld-docker ./helloworld-docker
 
 
 
-FROM golang:alpine3.13
+FROM golang:1.20.6-alpine3.18
 
 RUN mkdir -p /app
 WORKDIR /app
